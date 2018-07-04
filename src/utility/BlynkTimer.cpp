@@ -224,12 +224,15 @@ void SimpleTimer::deleteTimer(unsigned timerId) {
 
 
 // function contributed by code@rowansimms.com
-void SimpleTimer::restartTimer(unsigned numTimer) {
+void SimpleTimer::restartTimer(unsigned numTimer, bool resetRuns) {
     if (numTimer >= MAX_TIMERS) {
         return;
     }
 
     timer[numTimer].prev_millis = elapsed();
+    if (resetRuns) {
+        timer[numTimer].numRuns = 0;
+    }
 }
 
 

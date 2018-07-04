@@ -93,7 +93,7 @@ public:
     void deleteTimer(unsigned numTimer);
 
     // restart the specified timer
-    void restartTimer(unsigned numTimer);
+    void restartTimer(unsigned numTimer, bool resetRuns = false);
 
     // returns true if the specified timer is enabled
     bool isEnabled(unsigned numTimer);
